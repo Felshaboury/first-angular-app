@@ -1,0 +1,16 @@
+/* Ensure the modal has a maximum height */
+.modal-dialog {
+  max-height: 90vh; /* Adjust as needed */
+}
+
+/* Scrollable content inside the modal body */
+.modal-body-scrollable {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Adjust the button layout inside the modal */
+.p-button-danger {
+  background-color: #ff3b3b;
+  border: none;
+}

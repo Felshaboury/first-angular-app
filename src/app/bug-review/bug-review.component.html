@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Reported Bugs</h2>
+    <div *ngFor="let report of bugReports" class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ report.title }}</h5>
+        <p class="card-text">{{ report.description }}</p>
+        <p class="card-text"><strong>Steps to Reproduce:</strong> {{ report.stepsToReproduce }}</p>
+        <p class="card-text"><strong>Priority:</strong> {{ report.priority }}</p>
+        <p class="card-text"><strong>Category:</strong> {{ report.category }}</p>
+        <p class="card-text"><small class="text-muted">Submitted at: {{ report.timestamp | date:'medium' }}</small></p>
+        <button class="btn btn-primary" (click)="viewRecording(report)">View Recording</button>
+      </div>
+    </div>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="playbackModal" tabindex="-1" aria-labelledby="playbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="playbackModalLabel">Playback Recording</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0" style="position:relative; overflow: hidden;">
+            <div id="player" style="width: 30%; height: 600vh;"></div> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
